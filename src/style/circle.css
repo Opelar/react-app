@@ -1,0 +1,106 @@
+.circle-page {
+  padding-top: 44px;
+}
+.circle-top {
+  width: 100%;
+  height: 260px;
+  position: relative;
+}
+.circle-top .cover {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.circle-top .cover img {
+  width: 100%;
+}
+.circle-top .userName {
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 3px;
+  position: absolute;
+  bottom: 0;
+  right: 100px;
+}
+.circle-top .avatar {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  right: 4%;
+  bottom: -20px;
+  z-index: 5;
+  border-radius: 2px;
+}
+.circle-top .avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+}
+.circle-list {
+  width: 100%;
+  padding-top: 30px;
+  margin-bottom: 80px;
+  background-color: #fff;
+  display: inline-block;
+}
+.circle-item {
+  width: 100%;
+}
+.circle-item .wrap {
+  width: 92%;
+  margin: 0 auto;
+  padding: 15px 0;
+  display: table;
+}
+.wrap .item-l,
+.wrap .item-r {
+  display: table-cell;
+  vertical-align: top;
+}
+.wrap .item-l {
+  width: 50px;
+  padding-right: 10px;
+}
+.wrap .item-l img {
+  width: 50px;
+  height: 50px;
+}
+.wrap .item-r .name {
+  width: 100%;
+  font-size: 16px;
+  color: #1296db;
+}
+.wrap .item-r .content-text {
+  line-height: 1.3;
+  font-size: 15px;
+  color: #444444;
+  padding-top: 10px;
+}
+.wrap .item-r .content-imgs {
+  padding-top: 10px;
+  display: inline-block;
+}
+.wrap .item-r .content-imgs .img-wrap {
+  display: inline-block;
+  padding: 0px 5px 5px 0px;
+  width: 80px;
+  height: 80px;
+}
+@media screen and (max-width: 320px) {
+  .wrap .item-r .content-imgs .img-wrap {
+    width: 70px;
+    height: 70px;
+  }
+}
+.wrap .item-r img {
+  width: 100%;
+  height: 100%;
+}
+.wrap .item-r .ctime {
+  padding-top: 5px;
+  color: #888888;
+  font-size: 12px;
+}

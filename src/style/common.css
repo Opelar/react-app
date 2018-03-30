@@ -1,0 +1,187 @@
+/* navbars start===================== */
+/* color #1296db */
+
+.navbars {
+  width: 100%;
+  height: 48px;
+  position: fixed !important;
+  left: 0;
+  bottom: 0;
+  /* box-shadow: 0 0 1px 0.5px #cccccc; */
+  display: table;
+  background-color: #ffffff;
+  z-index: 10;
+}
+.navbars .navitem {
+  width: 25%;
+  height: 100%;
+  display: table-cell;
+  color: #bababb;
+  position: relative;
+}
+.navbars .navitem a {
+  display: block;
+  /* height: 38px; */
+  /* width: 100%; */
+  background-color: transparent;
+  position: absolute;
+  top: 2.5px;
+  left: 0;
+  bottom: 0px;
+  right: 0;
+  z-index: 99;
+}
+.navbars .navitem .navtext {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  height: 18px;
+  text-align: center;
+  font-size: 12px;
+}
+.navbars .item1 {
+  background: url("../icons/home.png") no-repeat center;
+  background-size: 30px 30px;
+}
+.navbars .item2 {
+  background: url("../icons/tui.png") no-repeat center 11px;
+  background-size: 25px 25px;
+}
+.navbars .item3 {
+  background: url("../icons/circle.png") no-repeat center;
+  background-size: 26px 26px;
+}
+.navbars .item4 {
+  background: url("../icons/user.png") no-repeat center;
+  background-size: 28px 28px;
+}
+
+.navbars .item1.rootActive {
+  color: #1296db;
+  background: url("../icons/home_fill.png") no-repeat center;
+  background-size: 30px 30px;
+}
+.navbars .item2.rootActive {
+  color: #1296db;
+  background: url("../icons/tui_fill.png") no-repeat center 11px;
+  background-size: 25px 25px;
+}
+.navbars .item3.rootActive {
+  color: #1296db;
+  background: url("../icons/circle_fill.png") no-repeat center;
+  background-size: 26px 26px;
+}
+.navbars .item4.rootActive {
+  color: #1296db;
+  background: url("../icons/user_fill.png") no-repeat center;
+  background-size: 28px 28px;
+}
+/* navbars end===================== */
+
+.my-scroller {
+  position: absolute;
+  z-index: 1;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+
+/* 处理scrollbar */
+::-webkit-scrollbar {
+	width: 0px;
+	height: 12px;
+}
+::-webkit-scrollbar-thumb, ::-webkit-scrollbar-thumb:horizontal {
+	border-radius: 3px;
+	background: rgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-button {
+	display: none;
+}
+::-webkit-scrollbar-track, ::-webkit-scrollbar-track-piece {
+	background: -webkit-gradient(linear,left);
+}
+::-webkit-scrollbar-track-piece {
+	background: #FFF;
+}
+
+.scroll-anchor {
+  height: 88px;
+  position: absolute;
+  width: 100%;
+  top: 10px;
+}
+.my-hidden {
+  display: none !important;
+}
+
+.my-pull-loading {
+  width: 100%;
+  height: 35px;
+  margin-bottom: 50px;
+}
+.my-pull-loading .loading {
+  width: 80px;
+  height: 35px;
+  overflow: hidden;
+  margin: 0 auto;
+  text-indent: 20px;
+  line-height: 36px;
+  color: #bebec6;
+  font-size: 12px;
+  position: relative;
+}
+.my-pull-loading .loading img {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 9px;
+  left: 0;
+}
+
+/* 极细边框的实现, 模拟原生app细边框 */
+.fine-border-top,
+.fine-border-bottom {
+  position: relative;
+}
+/*极细边框的实现*/
+.fine-border-top:before {
+  position: absolute;
+  content: "";
+  height: 1px;
+  background: #888888;
+  width: 100%;
+  top: -0.3px;
+  left: 0;
+  -webkit-transform: scaleY(0.25);
+  -ms-transform: scaleY(0.25);
+  -o-transform: scaleY(0.25);
+  transform: scaleY(0.25);
+}
+.fine-border-bottom:after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  background: #888888;
+  width: 100%;
+  bottom: 0.3px;
+  left: 0;
+  -webkit-transform: scaleY(0.25);
+  -ms-transform: scaleY(0.25);
+  -o-transform: scaleY(0.25);
+  transform: scaleY(0.25);
+}

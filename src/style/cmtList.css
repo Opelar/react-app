@@ -1,0 +1,121 @@
+/* 评论列表================start */
+.comment {
+  width: 92%;
+  margin: 0 auto;
+  padding: 10px 4%;
+  margin-top: 10px;
+  background-color: transparent !important;
+}
+.comment .write {
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+}
+.comment .write #writeCmt {
+  float: right;
+  display: block;
+  height: 40px;
+  font-size: 0;
+}
+.comment .write #writeCmt span {
+  height: 40px;
+  line-height: 40px;
+  color: #4285F4;
+  font-size: 16px;
+  display: inline-block;
+}
+.comment .write #writeCmt img {
+  width: 12px;
+  padding-left: 5px;
+  display: inline-block;
+}
+.comment .title {
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  color: #666666;
+  font-weight: 600;
+  height: 30px;
+  line-height: 30px;
+  position: relative;
+}
+.comment .title:before {
+  content: '';
+  position: absolute;
+  height: 1px;
+  top: 15px;
+  width: 40%;
+  left: 0;
+  background-color: #dedede;
+}
+.comment .title:after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  top: 15px;
+  width: 40%;
+  right: 0;
+  background-color: #dedede;
+}
+.comment .list {
+  padding: 0 0 20px;
+  width: 100%;
+  display: inline-block;
+  font-size: 0;
+}
+.comment .list .item {
+  width: 100%;
+  display: inline-block;
+  font-size: 0;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+.comment .list .item .avatar {
+  width: 12%;
+  float: left;
+  position: relative;
+}
+.comment .list .item .avatar .avatar-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+.comment .list .item .avatar .isV {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+.comment .list .item .right {
+  width: 88%;
+  float: left;
+}
+.comment .list .item .right .name {
+  font-size: 16px;
+  color: #666666;
+  line-height: 1.2;
+}
+.comment .list .item .right .cmt-txt {
+  padding-top: 6px;
+  font-size: 15px;
+  color: #333333;
+  line-height: 1.4;
+}
+.comment .list .item .right .ctime {
+  font-size: 15px;
+  padding-top: 5px;
+  color: #ccc;
+}
+.comment .more {
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #dedede;
+  line-height: 36px;
+  color: #888888;
+  border-radius: 2px;
+}
+/* 评论列表================end */

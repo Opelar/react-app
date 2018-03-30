@@ -1,0 +1,44 @@
+.article-details {
+  width: 100%;
+}
+.article-details .article-sec {
+  width: 92%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 44px 4% 0;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #dedede;
+}
+.mainTitle {
+  padding: 10px 0;
+  font-size: 20px;
+  color: #666666;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 1px;
+}
+.article-info {
+  height: 30px;
+  padding-bottom: 10px;
+}
+.article-info .col {
+  float: left;
+  padding-right: 6px;
+  font-size: 15px;
+  line-height: 30px;
+  color: #999999;
+}
+.article-info .tagName {
+  color: #1296db;
+}
+
+/* 富文本样式 */
+.article-content {
+  padding-bottom: 10px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #666666;
+}
+.article-content p {
+  padding-bottom: 10px;
+}

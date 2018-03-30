@@ -1,0 +1,108 @@
+.personal-page {
+  width: 100%;
+  height: 100%;
+  padding-top: 44px;
+}
+.userInfo {
+  width: 100%;
+  height: 80px;
+  background-color: #ffffff;
+  overflow: hidden;
+  margin-top: 15px;
+  /* box-shadow: 0 0 0.5px 0px #c9c9c9; */
+}
+.userInfo .line {
+  width: 92%;
+  margin: 0 auto;
+  height: 100%;
+  display: table;
+}
+.userInfo .line .avatar {
+  width: 60px;
+  height: 60px;
+  display: table-cell;
+  vertical-align: middle;
+}
+.userInfo .line .avatar img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.userInfo .line .nickname {
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 10px;
+  width: 80%;
+}
+.userInfo .line .nickname .name{
+  font-size: 17px;
+  color: #555555;
+  font-weight: 600;
+}
+.userInfo .line .nickname .desc{
+  font-size: 14px;
+  color: #888888;
+  padding-top: 10px;
+  height: 16px;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-height: 1.2;
+}
+
+.personal-list {
+  width: 100%;
+  background-color: #ffffff;
+  margin-top: 15px;
+  /* border-bottom: 1px solid #dedede; */
+}
+.personal-list .line {
+  width: 92%;
+  margin: 0 auto;
+  height: 50px;
+  display: table;
+  /* border-bottom: 1px solid #dedede; */
+}
+.personal-list .line:last-child {
+  border: none;
+}
+.personal-list .line .icon{
+  display: table-cell;
+  height: 100%;
+  vertical-align: middle;
+  width: 50px;
+}
+.personal-list .line .icon img {
+  width: 30px;
+}
+.personal-list .line .txt {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+  font-size: 14px;
+  color: #666666;
+}
+
+.personal-list .line .icon0 {
+  background: url("../icons/shoucang.png") no-repeat center center;
+  background-size: 28px;
+}
+.personal-list .line .icon1 {
+  background: url("../icons/dongtai.png") no-repeat center center;
+  background-size: 30px;
+}
+.personal-list .line .icon2 {
+  background: url("../icons/wenzhang.png") no-repeat center center;
+  background-size: 28px;
+}
+.personal-list .line .icon3 {
+  background: url("../icons/fadeback.png") no-repeat center center;
+  background-size: 30px;
+}
+.personal-list .line .icon4 {
+  background: url("../icons/setting.png") no-repeat center center;
+  background-size: 28px;
+}

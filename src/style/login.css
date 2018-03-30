@@ -1,0 +1,175 @@
+/* login start */
+/* @import "./animate.css"; */
+
+.login {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 44px;
+}
+
+.login .login-wrap {
+  width: 85%;
+  margin: 0 auto;
+  height: 100%;
+}
+.login-wrap .logo {
+  width: 100%;
+  height: 80px;
+  padding: 15px 0;
+  text-align: center;
+}
+.login-wrap .logo img {
+  width: 80px;
+}
+.login-wrap .login-form {
+  width: 100%;
+  border-radius: 4px;
+  padding-top: 15px;
+}
+.login-form .form-group {
+  width: 100%;
+  height: 50px;
+}
+.login-form .form-group input {
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  font-size: 16px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #dedede;
+}
+.login-form .form-group input::-webkit-input-placeholder {
+  font-size: 15px;
+  color: #888888;
+}
+.login-form .form-group input:focus {
+  border-bottom: 2px solid #1296db;
+}
+.form-submit {
+  width: 100%;
+  padding: 20px 0;
+}
+.form-submit .login-btn {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 42px;
+  border-radius: 2px;
+  font-size: 15px;
+  color: #ffffff;
+  background-color: #1296db;
+} 
+.meline {
+  width: 100%;
+  height: 30px;
+  padding-bottom: 10px;
+}
+.meline a {
+  text-decoration: none;
+  color: #1296db;
+  font-size: 14px;
+}
+.meline .go-forget {
+  float: left;
+}
+.meline .go-register {
+  float: right;
+}
+.other-login {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 15px;
+  color: #888888;
+  position: relative;
+}
+.other-login:before,
+.other-login:after {
+  content: '';
+  width: 70px;
+  height: 1px;
+  background-color: #cdcdcd;
+  position: absolute;
+  top: 25px;
+}
+.other-login:before {
+  left: 10px;
+}
+.other-login:after {
+  right: 10px;
+}
+.tenxun {
+  width: 80%;
+  height: 50px;
+  margin: 0 auto;
+  display: table;
+}
+.tenxun .login-way {
+  display: table-cell;
+  text-align: center;
+}
+.tenxun .login-way img {
+  width: 50px;
+}
+.page-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1296db;
+}
+
+/* login end */
+
+
+/* register 显示密码 */
+.form-group {
+  position: relative;
+}
+.seepwd {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* background-color: #000; */
+  background: url('../icons/hide_pwd.png') no-repeat center center;
+  background-size: 25px;
+}
+.seepwd.showpwd {
+  background: url('../icons/show_pwd.png') no-repeat center center;
+  background-size: 25px;
+}
+.authcode {
+  position: absolute;
+  right: 0;
+  font-size: 15px;
+  color: #1296db;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  height: 100%;
+}
+.authcode.disabled {
+  color: #999999;
+}
+
+.login-way0 {
+  background: url("../icons/wechat.png") no-repeat center center;
+  background-size: 44px;
+}
+.login-way1 {
+  background: url("../icons/qq.png") no-repeat center center;
+  background-size: 44px;
+}
+.login-way2 {
+  background: url("../icons/webo.png") no-repeat center center;
+  background-size: 44px;
+}
+
