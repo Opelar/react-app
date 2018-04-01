@@ -5,6 +5,7 @@
 .recommend-page .read-list {
   width: 92%;
   margin: 0 auto;
+  padding-bottom: 60px;
 }
 .recommend-page .read-list .item {
   width: 100%;
@@ -13,14 +14,20 @@
   padding: 10px 10px;
   box-sizing: border-box;
   border-radius: 1px;
+  box-shadow: 0px 0px 2px 1px #c9c9c9;
 }
 .recommend-page .read-list .item .title {
-  line-height: 1.6;
+  line-height: 1.3;
   font-size: 16px;
   color: #363636;
 }
-.recommend-page .read-list .item span.ctime {
-  padding-left: 15px;
+.recommend-page .read-list .item .ctime {
   color: #999999;
   font-size: 12px;
+  padding: 8px 0;
+}
+.recommend-page .read-list .item .summary {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666666;
 }

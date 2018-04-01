@@ -5,6 +5,8 @@ import { Link } from "react-router";
 import Navbars from "../Navbars/Navbars.jsx";
 import OuterHeader from "../Headers/OuterHeader.jsx";
 
+import getTime from "../../utils/getTime";
+
 // 搜索最顶端
 class Search extends Component {
   render() {
@@ -33,8 +35,11 @@ class ReadItem extends Component {
       <div className="item">
         <div className="title">
           {item.get("title")}{" "}
-          <span className="ctime">{item.get("publishDate")}</span>
         </div>
+        <div className="ctime">
+          {getTime(new Date(item.get("publishDate")).valueOf())}
+        </div>
+        <div className="summary">{item.get("summary")}</div>
       </div>
     );
   }
