@@ -2,7 +2,7 @@
   "name": "story",
   "version": "0.1.0",
   "private": true,
-  "homepage": "./",
+  "homepage": ".",
   "dependencies": {
     "alloytouch": "^0.2.5",
     "autoprefixer": "7.1.2",
