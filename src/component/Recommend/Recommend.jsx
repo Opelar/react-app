@@ -22,19 +22,55 @@ class Search extends Component {
   }
 }
 
-class RecommendPage extends Component {
+class ReadItem extends Component {
+  constructor(props) {
+    super();
+  }
   render() {
+    const item = this.props.item;
+
+    return (
+      <div className="item">
+        <div className="title">
+          {item.get("title")}{" "}
+          <span className="ctime">{item.get("publishDate")}</span>
+        </div>
+      </div>
+    );
+  }
+}
+
+class RecommendPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isScroll: false,
+      scrollTop: null,
+      toBottom: false
+    };
+  }
+
+  render() {
+    const readHubList = this.props.readHubList;
+
     return (
       <div className="recommend-page">
         <Search />
+        <OuterHeader title={"热门话题"} />
 
-        <OuterHeader title={"推荐"} />
-
-        <h1>推荐尽请期待</h1>
+        <div className="read-list">
+          {readHubList.map((item, index) => (
+            <ReadItem key={index} item={item} />
+          ))}
+        </div>
 
         <Navbars tabIndex={1} />
       </div>
     );
+  }
+
+  componentDidMount() {
+    this.props.getReadHubHot({ fromReadHub: true, pageSize: 20 });
   }
 }
 

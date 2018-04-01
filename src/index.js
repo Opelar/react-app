@@ -16,7 +16,7 @@ import initReactFastclick from "react-fastclick";
 import App from "./component/App";
 import HomePageContainer from "./container/HomePageContainer";
 import PersonalPage from "./component/Personal/PersonalPage.jsx";
-import Recommend from "./component/Recommend/Recommend.jsx";
+// import Recommend from "./component/Recommend/Recommend.jsx";
 import CirclePage from "./component/Circle/CirclePage.jsx";
 import ArticleDetailsContainer from "./container/ArticleDetailsContainer";
 // import MyEditor from "./component/Editor/MyEditor.jsx";
@@ -24,6 +24,7 @@ import ArticleDetailsContainer from "./container/ArticleDetailsContainer";
 import LoginContainer from "./container/LoginContainer";
 import RegisterPage from "./component/User/RegisterPage";
 import ForgetPassword from "./component/User/ForgetPassword";
+import ReadHubContainer from "./container/ReadHubContainer";
 // search
 import SearchPage from "./component/Home/SearchPage";
 
@@ -37,7 +38,7 @@ ReactDOM.render(
         <IndexRoute component={HomePageContainer} />
         <Route path="/article" component={ArticleDetailsContainer} />
         <Route path="/personal" component={PersonalPage} />
-        <Route path="/recommend" component={Recommend} />
+        <Route path="/recommend" component={ReadHubContainer} />
         <Route path="/circle" component={CirclePage} />
         <Route path="/login" component={LoginContainer} />
         <Route path="/register" component={RegisterPage} />

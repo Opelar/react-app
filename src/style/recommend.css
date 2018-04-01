@@ -2,3 +2,25 @@
   width: 100%;
   padding-top: 44px;
 }
+.recommend-page .read-list {
+  width: 92%;
+  margin: 0 auto;
+}
+.recommend-page .read-list .item {
+  width: 100%;
+  margin-top: 10px;
+  background-color: #ffffff;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  border-radius: 1px;
+}
+.recommend-page .read-list .item .title {
+  line-height: 1.6;
+  font-size: 16px;
+  color: #363636;
+}
+.recommend-page .read-list .item span.ctime {
+  padding-left: 15px;
+  color: #999999;
+  font-size: 12px;
+}

@@ -7,6 +7,7 @@ import {
   videoListReducer
 } from "./homeReducer";
 import { articleDetailsReducer } from "./articleDetailsReducer";
+import { readHubReducer } from "./readHubReducer";
 
 let rootReducer = combineReducers({
   toast,
@@ -14,7 +15,8 @@ let rootReducer = combineReducers({
   articleList: articleListReducer,
   imgList: imgListReducer,
   videoList: videoListReducer,
-  articleDetails: articleDetailsReducer
+  articleDetails: articleDetailsReducer,
+  readHubList: readHubReducer
 });
 
 function toJS(x) {

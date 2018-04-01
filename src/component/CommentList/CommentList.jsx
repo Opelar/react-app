@@ -6,7 +6,7 @@ const cmtList = [
     id: "1",
     avatar: "/image/cover/q0.jpg",
     userName: "朱塞佩·托纳多雷",
-    cmtTxt: "写得真鸡巴烂啊",
+    cmtTxt: "写得真烂啊",
     ctime: "刚刚"
   },
   {

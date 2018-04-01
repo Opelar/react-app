@@ -6,7 +6,9 @@ import "whatwg-fetch";
 import { startInvoke, invokeOK, invokeError } from "../action/invokeActions";
 import makeQueryString from "./makeQueryString";
 //const serverURL = "http://60.205.95.207:8080/xx_api";
-const serverURL = "https://www.easy-mock.com/mock/59e6b7f00cfd446fbae844f0/www.webapp.com";
+const serverURL =
+  "https://www.easy-mock.com/mock/59e6b7f00cfd446fbae844f0/www.webapp.com";
+const readHubURL = "https://api.readhub.me";
 
 export const RequestRecord = Record({
   method: "GET",
@@ -28,7 +30,14 @@ function sendRequestToServer(request) {
   let method = request.get("method");
   let path = request.get("path");
   let data = request.get("data");
-  let url = `${serverURL}${path}`;
+  let url = "";
+
+  if (data.get("fromReadHub")) {
+    url = `${readHubURL}${path}`;
+  } else {
+    url = `${serverURL}${path}`;
+  }
+
   let postData = null;
   let headers = {};
   let userId = window._store.getState().getIn(["user", "id"]);
