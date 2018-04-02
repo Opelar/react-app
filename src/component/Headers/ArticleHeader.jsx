@@ -1,5 +1,5 @@
 import "../../style/headers.css";
-import { browserHistory } from "react-router";
+// import { browserHistory } from "react-router";
 
 import React, { Component } from "react";
 
@@ -8,11 +8,12 @@ class ArticleHeader extends Component {
     super();
   }
   render() {
-    // console.log(this.props);
+    const goBack = this.props.router.goBack;
+    // console.log(this.props.router.goBack);
     let title = this.props.title;
     return (
       <div className="user-header">
-        <div className="back close" onClick={() => browserHistory.goBack()} />
+        <div className="back close" onClick={() => goBack()} />
         <span>{title}</span>
       </div>
     );
