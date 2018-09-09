@@ -20,7 +20,7 @@ class ArticleGroup extends Component {
     const articleList = this.props.articleList;
     return (
       <NativeScroll
-        className="swiper-slide animated fadeIn my-scroller aa"
+        className="swiper-slide animated fadeIn my-scroller"
         ref={n => (this.scroller = n)}
         onTouchMove={this.onTouchMove}
         onScroll={this.onScroll}
@@ -106,12 +106,12 @@ class ArticleItem extends Component {
     const data = this.props.data;
     return (
       <Link to={{ pathname: "/article", query: { id: data.get("id") } }}>
-        <div className="article-item fine-border-bottom">
+        <div className="article-item">
           <div className="item-content">
-            <div className="top">
+            {/* <div className="top"> */}
               {/* 来自： */}
-              {data.get("tagName")}
-            </div>
+              {/* {data.get("tagName")} */}
+            {/* </div> */}
 
             <div className="at-table">
               <div className="cell">
@@ -125,12 +125,12 @@ class ArticleItem extends Component {
               ) : null}
             </div>
 
-            <div className="bottom">
+            {/* <div className="bottom">
               <div className="author-avatar">
                 <img src={data.get("authorAvatar")} alt="avatar" />
               </div>
               <div className="author-name">{data.get("author")}</div>
-            </div>
+            </div> */}
           </div>
         </div>
       </Link>

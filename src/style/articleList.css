@@ -3,14 +3,21 @@
   height: auto;
   padding-top: 44px;
   padding-bottom: 80px;
+  overflow: hidden;
+}
+.article-list a {
+  overflow: hidden;
+  display: block;
 }
 .article-list .article-item {
-  width: 100%;
+  width: 92%;
   max-height: 200px;
-  margin-top: 7px;
+  margin: 7px auto 0;
   overflow: hidden;
   background-color: #ffffff;
-  /* box-shadow: 0 0 1px 0.5px #cccccc; */
+  box-shadow: 0px 1px 10px #dedede;
+  border-radius: 3px;
+  padding: 5px;
 }
 .article-item .item-content {
   width: 92%;
@@ -49,14 +56,14 @@
   vertical-align: middle;
 }
 .article-item .item-content .at-table .cell .title {
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
   line-height: 1.3;
   color: #888888;
   letter-spacing: 1px;
 }
 .article-item .item-content .at-table .cell .desc {
-  font-size: 14px;
+  font-size: 12px;
   color: #999999;
   line-height: 1.3;
   padding-top: 6px;
