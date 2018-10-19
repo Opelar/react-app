@@ -1,6 +1,4 @@
 import "../../style/headers.css";
-// import { browserHistory } from "react-router";
-
 import React, { Component } from "react";
 
 class ArticleHeader extends Component {

@@ -3,7 +3,7 @@ import React, { Component } from "react";
 
 class SearchPage extends Component {
   constructor(props) {
-    super();
+    super(props);
 
     this.state = {
       searchText: ""

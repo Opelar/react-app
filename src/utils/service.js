@@ -1,6 +1,3 @@
-/**
- * 封装数据为 immutable 对象
- */
 import { Record, fromJS } from "immutable";
 import "whatwg-fetch";
 import { startInvoke, invokeOK, invokeError } from "../action/invokeActions";

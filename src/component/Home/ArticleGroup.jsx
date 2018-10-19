@@ -88,11 +88,6 @@ class ArticleGroup extends Component {
   }
 
   componentWillUnmount() {
-    // 组件将被卸载
-    // console.log(this.state.scrollTop);
-    // window.removeEventListener("scroll", this.onScroll);
-    // console.log(document.getElementsByClassName("aa")[0]);
-    // document.getElementsByClassName("aa")[0].style.display = "none";
     localStorage.setItem("articleScrollTop", st);
   }
 }

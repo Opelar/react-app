@@ -4,11 +4,7 @@ import NativeScroll from "../common/NativeScroller";
 
 class ImgGroup extends Component {
   constructor(props) {
-    super();
-    this.onScroll = this.onScroll.bind(this);
-    this.onTouchMove = this.onTouchMove.bind(this);
-    this.onScrollToBottom = this.onScrollToBottom.bind(this);
-
+    super(props);
     this.state = {};
   }
 
@@ -32,19 +28,19 @@ class ImgGroup extends Component {
     );
   }
 
-  onScroll(direction, scrollTop) {
+  onScroll = (direction, scrollTop) => {
     if (direction === "down" && scrollTop <= this.isScrollHeight) {
       this.setState({ isScroll: false });
     }
   }
 
-  onTouchMove(direction) {
+  onTouchMove = (direction) => {
     if (direction === "up") {
       this.setState({ isScroll: true });
     }
   }
 
-  onScrollToBottom() {
+  onScrollToBottom = () => {
     console.log("到底了");
   }
 
@@ -60,7 +56,7 @@ class ImgGroup extends Component {
 
 class ImgGroupItem extends Component {
   constructor(props) {
-    super();
+    super(props);
   }
   render() {
     const data = this.props.data;

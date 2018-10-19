@@ -1,5 +1,4 @@
 import "../../style/headers.css";
-
 import React, { Component } from "react";
 
 class UserHeader extends Component {

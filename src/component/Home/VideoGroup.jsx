@@ -3,7 +3,7 @@ import React, { Component } from "react";
 
 class VideoGroup extends Component {
   constructor(props) {
-    super();
+    super(props);
   }
 
   componentDidMount() {
@@ -27,7 +27,7 @@ class VideoGroup extends Component {
 
 class VideoGroupItem extends Component {
   constructor(props) {
-    super();
+    super(props);
   }
 
   render() {

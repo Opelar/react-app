@@ -4,7 +4,6 @@ import { findDOMNode } from "react-dom";
 import { fromJS } from "immutable";
 
 class NativeScroller extends Component {
-  // static propTypes = {};
 
   constructor(props) {
     super();
@@ -80,7 +79,6 @@ class NativeScroller extends Component {
   };
 
   onScrollToBottom = () => {
-    // console.log("scroll to bottom!");
     if (this.props.onScrollToBottom) {
       this.props.onScrollToBottom();
     }
@@ -88,39 +86,29 @@ class NativeScroller extends Component {
 
   setIsScroll = () => {
     if (this.props.setIsScroll) {
-      // console.log("setIsScroll");
       this.props.setIsScroll(true);
     }
   };
 
   unsetIsScroll = () => {
     if (this.props.setIsScroll) {
-      // console.log("unsetIsScroll");
       this.props.setIsScroll(false);
     }
   };
 
   setIsScrollShow = () => {
     if (this.props.setIsScrollShow) {
-      // console.log("setIsScrollShow");
       this.props.setIsScrollShow(true);
     }
   };
 
   unsetIsScrollShow = () => {
     if (this.props.setIsScrollShow) {
-      // console.log("unsetIsScrollShow");
       this.props.setIsScrollShow(false);
     }
   };
 
   _onScroll = direction => {
-    // console.log("onscroll:", {
-    //   direction,
-    //   top: this.scrollTop,
-    //   maxScrollY: this.maxScrollY,
-    //   isScrollHeight: this.isScrollHeight
-    // });
 
     if (this.props.onScroll) {
       this.props.onScroll(direction, this.scrollTop);
@@ -161,7 +149,6 @@ class NativeScroller extends Component {
   onTouchMove = event => {
     var y = event.changedTouches[0].clientY;
     let direction = this.touchStartClientY > y ? "up" : "down";
-    // console.log("ontouchmove, direction:", direction);
 
     if (this.props.onTouchMove) {
       this.props.onTouchMove(direction);
@@ -172,8 +159,6 @@ class NativeScroller extends Component {
         this.unsetIsScrollShow();
       }
     }
-    // console.log("unsetIsScroll");
-    // if (this.props.setIsScroll) this.props.setIsScroll(false);
   };
 }
 
