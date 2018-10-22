@@ -1,6 +1,6 @@
-import { connect } from "react-redux";
-import LoginPage from "../component/User/LoginPage";
-import { login } from "../action/userAction";
+import { connect } from 'react-redux';
+import LoginPage from '../component/User/LoginPage';
+import { login } from '../action/userAction';
 
 const mapStateToProps = (state, ownProps) => ({});
 
@@ -10,4 +10,7 @@ const mapDispatchToProps = dispath => ({
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LoginPage);

@@ -1,16 +1,16 @@
-import action from "../utils/action";
-import { showLoading, showError } from "../utils/toast";
+import action from '../utils/action';
+import { showLoading, showError } from '../utils/toast';
 
-export const START_INVOKE = "START_INVOKE";
-export const INVOKE_OK = "INVOKE_OK";
-export const INVOKE_ERROR = "INVOKE_ERROR";
+export const START_INVOKE = 'START_INVOKE';
+export const INVOKE_OK = 'INVOKE_OK';
+export const INVOKE_ERROR = 'INVOKE_ERROR';
 
 let loadingToast;
 
 export function startInvoke(request, useToast = true) {
-  let method = request.get("method");
+  let method = request.get('method');
   if (useToast) {
-    let message = method === "GET" ? "正在加载" : "正在处理";
+    let message = method === 'GET' ? '正在加载' : '正在处理';
     loadingToast = showLoading(message);
   }
   return action(START_INVOKE, { request });

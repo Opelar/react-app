@@ -1,7 +1,7 @@
-import "../../style/articleDetails.css";
-import React, { Component } from "react";
-import ArticleHeader from "../Headers/ArticleHeader";
-import CommentList from "../CommentList/CommentList";
+import '../../style/articleDetails.css';
+import React, { Component } from 'react';
+import ArticleHeader from '../Headers/ArticleHeader';
+import CommentList from '../CommentList/CommentList';
 
 // const articleDetails = {
 //   id: "1",

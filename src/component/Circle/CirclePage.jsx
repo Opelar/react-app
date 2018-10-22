@@ -1,57 +1,57 @@
-import "../../style/circle.css";
-import React, { Component } from "react";
-import Navbars from "../Navbars/Navbars.jsx";
-import OuterHeader from "../Headers/OuterHeader.jsx";
-import getTime from "../../utils/getTime"
+import '../../style/circle.css';
+import React, { Component } from 'react';
+import Navbars from '../Navbars/Navbars.jsx';
+import OuterHeader from '../Headers/OuterHeader.jsx';
+import getTime from '../../utils/getTime';
 
 const myCircle = {
-  userId: "1000",
-  userName: "OpenGirl",
-  cover: "/image/cover/q0.jpg",
-  userAvatar: "/image/cover/q1.jpg",
+  userId: '1000',
+  userName: 'OpenGirl',
+  cover: '/image/cover/q0.jpg',
+  userAvatar: '/image/cover/q1.jpg',
   circleList: [
     {
-      id: "0",
-      friendName: "往事不回首",
-      friendAvatar: "/image/cover/q0.jpg",
+      id: '0',
+      friendName: '往事不回首',
+      friendAvatar: '/image/cover/q0.jpg',
       friendContent:
-        "我是第一条动态，这是一个未知的世界我是第一条动态，这是一个未知的世界我是第一条动态，这是一个未知的世界我是第一条动态，这是一个未知的世界",
-      cTime: "1516176418888",
+        '我是第一条动态，这是一个未知的世界我是第一条动态，这是一个未知的世界我是第一条动态，这是一个未知的世界我是第一条动态，这是一个未知的世界',
+      cTime: '1516176418888',
       imgs: []
     },
     {
-      id: "1",
-      friendName: "回首",
-      friendAvatar: "/image/cover/q1.jpg",
-      friendContent: "我是第二条动态，这是一个未知的世界",
-      cTime: "1516176418888",
-      imgs: ["/image/imgGroup/6.jpg", "/image/imgGroup/7.jpg"]
+      id: '1',
+      friendName: '回首',
+      friendAvatar: '/image/cover/q1.jpg',
+      friendContent: '我是第二条动态，这是一个未知的世界',
+      cTime: '1516176418888',
+      imgs: ['/image/imgGroup/6.jpg', '/image/imgGroup/7.jpg']
     },
     {
-      id: "2",
-      friendName: "回首",
-      friendAvatar: "/image/cover/q2.jpg",
-      friendContent: "我是第二条动态，这是一个未知的世界",
-      cTime: "1516176218888",
+      id: '2',
+      friendName: '回首',
+      friendAvatar: '/image/cover/q2.jpg',
+      friendContent: '我是第二条动态，这是一个未知的世界',
+      cTime: '1516176218888',
       imgs: [
-        "/image/imgGroup/8.jpg",
-        "/image/imgGroup/9.jpg",
-        "/image/imgGroup/10.jpg",
-        "/image/imgGroup/10.jpg",
-        "/image/imgGroup/10.jpg",
-        "/image/imgGroup/10.jpg",
-        "/image/imgGroup/10.jpg",
-        "/image/imgGroup/10.jpg",
-        "/image/imgGroup/10.jpg"
+        '/image/imgGroup/8.jpg',
+        '/image/imgGroup/9.jpg',
+        '/image/imgGroup/10.jpg',
+        '/image/imgGroup/10.jpg',
+        '/image/imgGroup/10.jpg',
+        '/image/imgGroup/10.jpg',
+        '/image/imgGroup/10.jpg',
+        '/image/imgGroup/10.jpg',
+        '/image/imgGroup/10.jpg'
       ]
     },
     {
-      id: "3",
-      friendName: "回首",
-      friendAvatar: "/image/cover/q3.jpg",
-      friendContent: "我是第二条动态，这是一个未知的世界",
-      cTime: "1516002318888",
-      imgs: ["/image/imgGroup/11.jpg"]
+      id: '3',
+      friendName: '回首',
+      friendAvatar: '/image/cover/q3.jpg',
+      friendContent: '我是第二条动态，这是一个未知的世界',
+      cTime: '1516002318888',
+      imgs: ['/image/imgGroup/11.jpg']
     }
   ]
 };
@@ -131,7 +131,7 @@ class CirclePage extends Component {
     const { userName, cover, userAvatar, circleList } = myCircle;
     return (
       <div className="circle-page">
-        <OuterHeader title={"圈子动态"} />
+        <OuterHeader title={'圈子动态'} />
 
         <PageTop userName={userName} cover={cover} userAvatar={userAvatar} />
 
@@ -143,24 +143,24 @@ class CirclePage extends Component {
   }
   componentDidMount() {
     const $ = ele => document.querySelectorAll(ele);
-    const imgBoxParent = $(".content-imgs");
+    const imgBoxParent = $('.content-imgs');
 
     for (let i = 0; i < imgBoxParent.length; i++) {
       let imgBox = imgBoxParent[i].childNodes;
       let len = imgBox.length;
 
       if (len === 1) {
-        imgBox[0].style.width = "90%";
-        imgBox[0].style.height = "auto";
+        imgBox[0].style.width = '90%';
+        imgBox[0].style.height = 'auto';
       }
 
       if (len === 2) {
-        imgBox[0].style.width = "45%";
-        imgBox[0].style.height = "auto";
-        imgBox[0].style.float = "left";
-        imgBox[1].style.width = "45%";
-        imgBox[1].style.height = "auto";
-        imgBox[1].style.float = "left";
+        imgBox[0].style.width = '45%';
+        imgBox[0].style.height = 'auto';
+        imgBox[0].style.float = 'left';
+        imgBox[1].style.width = '45%';
+        imgBox[1].style.height = 'auto';
+        imgBox[1].style.float = 'left';
       }
     }
   }

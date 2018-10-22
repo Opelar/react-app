@@ -1,12 +1,12 @@
-import "../../style/search.css";
-import React, { Component } from "react";
+import '../../style/search.css';
+import React, { Component } from 'react';
 
 class SearchPage extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      searchText: ""
+      searchText: ''
     };
   }
 

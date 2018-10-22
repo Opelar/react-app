@@ -1,8 +1,8 @@
-import { connect } from "react-redux";
-import PullLoading from "../component/common/PullLoading";
+import { connect } from 'react-redux';
+import PullLoading from '../component/common/PullLoading';
 
 function mapStateToProps(state) {
-  return state.get("invokeService").toJS();
+  return state.get('invokeService').toJS();
 }
 
 export default connect(mapStateToProps)(PullLoading);

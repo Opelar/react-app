@@ -1,6 +1,6 @@
-import { fromJS } from "immutable";
-import { createReducer } from "redux-immutablejs";
-import { LOGIN_OK, REGISTER_OK, RESET_PASSWORD_OK } from "../action/userAction";
+import { fromJS } from 'immutable';
+import { createReducer } from 'redux-immutablejs';
+import { LOGIN_OK, REGISTER_OK, RESET_PASSWORD_OK } from '../action/userAction';
 
 const initialState = fromJS([]);
 

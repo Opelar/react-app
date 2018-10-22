@@ -1,13 +1,13 @@
-import { combineReducers } from "redux-immutablejs";
-import InvokeServiceReducer from "./invokeServiceReducer";
-import toast from "./toastReducer";
+import { combineReducers } from 'redux-immutablejs';
+import InvokeServiceReducer from './invokeServiceReducer';
+import toast from './toastReducer';
 import {
   articleListReducer,
   imgListReducer,
   videoListReducer
-} from "./homeReducer";
-import { articleDetailsReducer } from "./articleDetailsReducer";
-import { readHubReducer } from "./readHubReducer";
+} from './homeReducer';
+import { articleDetailsReducer } from './articleDetailsReducer';
+import { readHubReducer } from './readHubReducer';
 
 let rootReducer = combineReducers({
   toast,

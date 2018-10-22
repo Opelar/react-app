@@ -1,8 +1,8 @@
-import "../../style/login.css";
-import React, { Component } from "react";
-import { Link } from "react-router";
-import { showError } from "../../utils/toast";
-import UserHeader from "../Headers/UserHeader.jsx";
+import '../../style/login.css';
+import React, { Component } from 'react';
+import { Link } from 'react-router';
+import { showError } from '../../utils/toast';
+import UserHeader from '../Headers/UserHeader.jsx';
 // import AnimateWrapper from "../common/AnimateWrapper.jsx";
 
 class LoginPage extends Component {
@@ -10,8 +10,8 @@ class LoginPage extends Component {
     super(props);
 
     this.state = {
-      tel: "",
-      password: ""
+      tel: '',
+      password: ''
     };
   }
 
@@ -34,11 +34,11 @@ class LoginPage extends Component {
 
     // 简单验证
     if (!reg.test(tel)) {
-      showError("手机号格式不正确");
+      showError('手机号格式不正确');
       return false;
     }
     if (!password || password.length > 12 || password.length < 6) {
-      showError("密码为6~12位");
+      showError('密码为6~12位');
       return false;
     }
 
@@ -48,7 +48,7 @@ class LoginPage extends Component {
   onOK = () => {
     let next = this.props.params.next;
     if (next == null) {
-      next = "/";
+      next = '/';
     }
     this.props.router.replace(decodeURIComponent(next));
   };
@@ -57,7 +57,7 @@ class LoginPage extends Component {
     // console.log(this.props);
     return (
       <div className="login animated fadeIn">
-        <UserHeader title={"用户登录"} {...this.props} />
+        <UserHeader title={'用户登录'} {...this.props} />
 
         <div className="login-wrap">
           <div className="logo">

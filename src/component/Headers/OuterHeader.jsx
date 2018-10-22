@@ -1,5 +1,5 @@
-import "../../style/headers.css";
-import React, { Component } from "react";
+import '../../style/headers.css';
+import React, { Component } from 'react';
 
 class OuterHeader extends Component {
   constructor(props) {

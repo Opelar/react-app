@@ -1,8 +1,8 @@
-import "../../style/login.css";
-import React, { Component } from "react";
-import classList from "../../utils/classList";
-import UserHeader from "../Headers/UserHeader.jsx";
-import { showError } from "../../utils/toast";
+import '../../style/login.css';
+import React, { Component } from 'react';
+import classList from '../../utils/classList';
+import UserHeader from '../Headers/UserHeader.jsx';
+import { showError } from '../../utils/toast';
 // import AnimateWrapper from "../common/AnimateWrapper.jsx";
 
 class ForgetPassword extends Component {
@@ -13,10 +13,10 @@ class ForgetPassword extends Component {
       pwdStatus: false,
       second: 60,
       codeStatus: true,
-      btnTxt: "发送验证码",
-      tel: "",
-      authcode: "",
-      password: ""
+      btnTxt: '发送验证码',
+      tel: '',
+      authcode: '',
+      password: ''
     };
   }
 
@@ -24,12 +24,12 @@ class ForgetPassword extends Component {
     const reg = /^1[34578]\d{9}$/;
     let s = this.state.second;
     let tel = this.state.tel;
-    let txt = "秒后重发";
+    let txt = '秒后重发';
 
     // 验证
     // 带上tel请求服务端
     if (!reg.test(tel)) {
-      showError("手机号格式不正确");
+      showError('手机号格式不正确');
       return false;
     }
 
@@ -43,7 +43,7 @@ class ForgetPassword extends Component {
       if (s === 0) {
         clearInterval(t);
         this.setState({
-          btnTxt: "发送验证码",
+          btnTxt: '发送验证码',
           codeStatus: true
         });
       }
@@ -58,15 +58,15 @@ class ForgetPassword extends Component {
 
     // 验证
     if (!reg.test(tel)) {
-      showError("手机号格式不正确");
+      showError('手机号格式不正确');
       return false;
     }
     if (!authcode || authcode.length > 6) {
-      showError("验证码不能为空且在六位以内");
+      showError('验证码不能为空且在六位以内');
       return false;
     }
     if (!password || password.length > 12 || password.length < 6) {
-      showError("密码为6-12位");
+      showError('密码为6-12位');
       return false;
     }
 
@@ -80,7 +80,7 @@ class ForgetPassword extends Component {
 
     return (
       <div className="register login animated fadeIn">
-        <UserHeader title={"找回密码"} {...this.props} />
+        <UserHeader title={'找回密码'} {...this.props} />
 
         <div className="login-wrap">
           <div className="logo">
@@ -103,8 +103,8 @@ class ForgetPassword extends Component {
               />
               <button
                 type="button"
-                className={classList("authcode", { disabled: !codeStatus })}
-                disabled={!codeStatus ? "disabled" : false}
+                className={classList('authcode', { disabled: !codeStatus })}
+                disabled={!codeStatus ? 'disabled' : false}
                 onClick={this.handleGetAuthCode}
               >
                 {btnTxt}
@@ -112,12 +112,12 @@ class ForgetPassword extends Component {
             </div>
             <div className="form-group">
               <input
-                type={!pwdStatus ? "password" : "text"}
+                type={!pwdStatus ? 'password' : 'text'}
                 placeholder="新密码"
                 onChange={e => this.setState({ password: e.target.value })}
               />
               <div
-                className={classList("seepwd", {
+                className={classList('seepwd', {
                   showpwd: pwdStatus === true
                 })}
                 onClick={() => this.setState({ pwdStatus: !pwdStatus })}

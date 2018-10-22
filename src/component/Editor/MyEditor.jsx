@@ -1,15 +1,15 @@
 // import "draft-js/dist/Draft.css";
-import "../../style/Rich.css";
-import React, { Component } from "react";
+import '../../style/Rich.css';
+import React, { Component } from 'react';
 import {
   Editor,
   EditorState,
-  RichUtils/* ,
+  RichUtils /* ,
   DefaultDraftBlockRenderMap,
   AtomicBlockUtils,
   convertToRaw,
   Entity */
-} from "draft-js";
+} from 'draft-js';
 // import {
 //   Bold,
 //   Italic,
@@ -28,7 +28,7 @@ import {
 // } from 'react-draft-editor/lib/index';
 
 // import Immutable from "immutable";
-import EditorHeader from "../Headers/EditorHeader";
+import EditorHeader from '../Headers/EditorHeader';
 
 class MyEditor extends Component {
   constructor(props) {
@@ -41,9 +41,9 @@ class MyEditor extends Component {
     const newState = RichUtils.handleKeyCommand(editorState, command);
     if (newState) {
       this.onChange(newState);
-      return "handled";
+      return 'handled';
     }
-    return "not-handled";
+    return 'not-handled';
   }
   render() {
     let edState = this.state.editorState.toJS();
@@ -51,7 +51,7 @@ class MyEditor extends Component {
 
     return (
       <div className="my-editor">
-        <EditorHeader title={"编辑器"} />
+        <EditorHeader title={'编辑器'} />
 
         <Editor
           editorState={this.state.editorState}
@@ -60,7 +60,7 @@ class MyEditor extends Component {
         />
 
         <div className="btn-group">
-        {/* <Bold />
+          {/* <Bold />
         <Italic /> */}
           <div className="add-img-btn">按钮组/添加图片</div>
         </div>

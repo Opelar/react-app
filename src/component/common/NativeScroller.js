@@ -1,10 +1,9 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { findDOMNode } from "react-dom";
-import { fromJS } from "immutable";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { findDOMNode } from 'react-dom';
+import { fromJS } from 'immutable';
 
 class NativeScroller extends Component {
-
   constructor(props) {
     super();
   }
@@ -32,7 +31,7 @@ class NativeScroller extends Component {
   };
 
   render() {
-    let { component = "div" } = this.props;
+    let { component = 'div' } = this.props;
     let props = Object.assign({}, this.props, {
       onScroll: this.onScroll,
       onTouchStart: this.onTouchStart,
@@ -67,7 +66,7 @@ class NativeScroller extends Component {
 
   onScroll = event => {
     let scrollTop = event.target.scrollTop;
-    let direction = scrollTop > this.scrollTop ? "up" : "down";
+    let direction = scrollTop > this.scrollTop ? 'up' : 'down';
     this.scrollTop = scrollTop;
     this._onScroll(direction);
   };
@@ -109,7 +108,6 @@ class NativeScroller extends Component {
   };
 
   _onScroll = direction => {
-
     if (this.props.onScroll) {
       this.props.onScroll(direction, this.scrollTop);
     }
@@ -118,26 +116,26 @@ class NativeScroller extends Component {
       this.onScrollEventListeners.forEach(fn => fn(direction, this.scrollTop));
     }
 
-    if (direction === "down" && this.scrollTop === 0) {
+    if (direction === 'down' && this.scrollTop === 0) {
       this.onScrollToTop();
       // console.log("到顶了");
     }
 
-    if (direction === "up" && this.scrollTop >= this.maxScrollY - 2) {
+    if (direction === 'up' && this.scrollTop >= this.maxScrollY - 2) {
       this.onScrollToBottom();
     }
 
     if (this.isScrollHeight != null) {
-      if (direction === "up" && this.scrollTop >= this.isScrollHeight) {
+      if (direction === 'up' && this.scrollTop >= this.isScrollHeight) {
         this.setIsScroll();
         this.setIsScrollShow();
-      } else if (direction === "down" && this.scrollTop < this.isScrollHeight) {
+      } else if (direction === 'down' && this.scrollTop < this.isScrollHeight) {
         this.unsetIsScroll();
         this.unsetIsScrollShow();
       }
     }
 
-    if (direction === "up" && this.props.isScroll && this.props.isScroll()) {
+    if (direction === 'up' && this.props.isScroll && this.props.isScroll()) {
       this.setIsScrollShow();
     }
   };
@@ -148,14 +146,14 @@ class NativeScroller extends Component {
 
   onTouchMove = event => {
     var y = event.changedTouches[0].clientY;
-    let direction = this.touchStartClientY > y ? "up" : "down";
+    let direction = this.touchStartClientY > y ? 'up' : 'down';
 
     if (this.props.onTouchMove) {
       this.props.onTouchMove(direction);
     }
 
     if (this.props.isScroll && this.props.isScroll()) {
-      if (direction === "down") {
+      if (direction === 'down') {
         this.unsetIsScrollShow();
       }
     }

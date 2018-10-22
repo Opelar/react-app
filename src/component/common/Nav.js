@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class Nav extends Component {
   render() {
-    let { component = "div" } = this.props;
+    let { component = 'div' } = this.props;
     let props = Object.assign({}, this.props);
     props.onClick = this._onTap;
     delete props.component;

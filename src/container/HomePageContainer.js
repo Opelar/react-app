@@ -1,16 +1,16 @@
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 import {
   getArticleGroup,
   getImgGroup,
   getVideoGroup
-} from "../action/homeAction";
-import HomePage from "../component/Home/HomePage.jsx";
+} from '../action/homeAction';
+import HomePage from '../component/Home/HomePage.jsx';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = state => {
   return {
-    articleList: state.get("articleList"),
-    imgList: state.get("imgList"),
-    videoList: state.get("videoList")
+    articleList: state.get('articleList'),
+    imgList: state.get('imgList'),
+    videoList: state.get('videoList')
   };
 };
 
@@ -26,8 +26,9 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-const HomePageContainer = connect(mapStateToProps, mapDispatchToProps)(
-  HomePage
-);
+const HomePageContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(HomePage);
 
 export default HomePageContainer;

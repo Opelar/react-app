@@ -1,10 +1,10 @@
-import { connect } from "react-redux";
-import ArticleDetails from "../component/ArticleDetails/ArticleDetails.jsx";
-import { getArticleDetails } from "../action/articleDetailsAction";
+import { connect } from 'react-redux';
+import ArticleDetails from '../component/ArticleDetails/ArticleDetails.jsx';
+import { getArticleDetails } from '../action/articleDetailsAction';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = state => {
   return {
-    articleDetails: state.get("articleDetails")
+    articleDetails: state.get('articleDetails')
   };
 };
 
@@ -14,8 +14,9 @@ const mapDispatchToProps = dispath => ({
   }
 });
 
-const ArticleDetailsContainer = connect(mapStateToProps, mapDispatchToProps)(
-  ArticleDetails
-);
+const ArticleDetailsContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ArticleDetails);
 
 export default ArticleDetailsContainer;

@@ -1,7 +1,7 @@
-import "../../style/animate.css";
+import '../../style/animate.css';
 
-import React, { Component } from "react";
-import classList from "../../utils/classList";
+import React, { Component } from 'react';
+import classList from '../../utils/classList';
 
 export default class AnimateWrapper extends Component {
   constructor(props) {
@@ -20,8 +20,8 @@ export default class AnimateWrapper extends Component {
       <div
         className={
           !status
-            ? "animate-wrapper slideInRight"
-            : "animate-wrapper slideOutRight"
+            ? 'animate-wrapper slideInRight'
+            : 'animate-wrapper slideOutRight'
         }
       >
         {this.props.children}

@@ -18,26 +18,25 @@ import {
 
 class MyBold extends Bold {
   constructor(props) {
-    super()
+    super();
     this.state = {
-      editorState: ""
-    }
+      editorState: ''
+    };
   }
 
   render() {
-    const handleChange = this.handleChange.bind(this)
-    const { editorState } = this.state
+    const handleChange = this.handleChange.bind(this);
+    const { editorState } = this.state;
 
-  	return (
+    return (
       <span
         className="asdsad"
         onMouseDown={this.handleMouseDown.bind(this)}
-        onMouseUp={this.handleMouseUp.bind(this)}>
-          Bold
+        onMouseUp={this.handleMouseUp.bind(this)}
+      >
+        Bold
       </span>
-  	)
+    );
   }
-  handleChange() {
-
-  }
+  handleChange() {}
 }

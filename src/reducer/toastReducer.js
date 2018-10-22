@@ -1,6 +1,6 @@
-import { fromJS } from "immutable";
-import { createReducer } from "redux-immutablejs";
-import { SHOW_TOAST, HIDE_TOAST } from "../action/toastActions";
+import { fromJS } from 'immutable';
+import { createReducer } from 'redux-immutablejs';
+import { SHOW_TOAST, HIDE_TOAST } from '../action/toastActions';
 
 const initialState = fromJS({
   show: false,
@@ -9,7 +9,7 @@ const initialState = fromJS({
 });
 
 const toastReducer = createReducer(initialState, {
-  [SHOW_TOAST]: (state, action) => action.payload.set("show", true),
+  [SHOW_TOAST]: (state, action) => action.payload.set('show', true),
   [HIDE_TOAST]: (state, action) => initialState
 });
 

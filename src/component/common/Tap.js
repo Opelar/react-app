@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import {findDOMNode} from "react-dom";
+import React, { Component } from 'react';
+import { findDOMNode } from 'react-dom';
 
 export default class Tap extends Component {
   render() {
@@ -7,14 +7,26 @@ export default class Tap extends Component {
     delete props.component;
     delete props.onTap;
 
-    return React.createElement(this.props.component || "div", props, this.props.children);
-  };
+    return React.createElement(
+      this.props.component || 'div',
+      props,
+      this.props.children
+    );
+  }
 
   componentDidMount() {
-    findDOMNode(this).addEventListener("tap", this.props.onTap || this.props.onClick, false);
-  };
+    findDOMNode(this).addEventListener(
+      'tap',
+      this.props.onTap || this.props.onClick,
+      false
+    );
+  }
 
   componentWillUnmount() {
-    findDOMNode(this).removeEventListener("tap", this.props.onTap || this.props.onClick, false);
+    findDOMNode(this).removeEventListener(
+      'tap',
+      this.props.onTap || this.props.onClick,
+      false
+    );
   }
 }

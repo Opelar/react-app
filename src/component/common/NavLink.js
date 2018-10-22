@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { Link } from "react-router";
-import classNames from "../../utils/classnames";
-import Tap from "./Tap";
+import React, { Component } from 'react';
+import { Link } from 'react-router';
+import classNames from '../../utils/classnames';
+import Tap from './Tap';
 
 export default class NavLick extends Component {
   render() {
@@ -10,7 +10,7 @@ export default class NavLick extends Component {
         component={Link}
         {...this.props}
         onTap={this._onTap}
-        className={classNames("mp-nav-link", this.props.className)}
+        className={classNames('mp-nav-link', this.props.className)}
       />
     );
   }

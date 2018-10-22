@@ -1,11 +1,11 @@
-import "../../style/recommend.css";
+import '../../style/recommend.css';
 
-import React, { Component } from "react";
-import { Link } from "react-router";
-import Navbars from "../Navbars/Navbars.jsx";
-import OuterHeader from "../Headers/OuterHeader.jsx";
+import React, { Component } from 'react';
+import { Link } from 'react-router';
+import Navbars from '../Navbars/Navbars.jsx';
+import OuterHeader from '../Headers/OuterHeader.jsx';
 
-import getTime from "../../utils/getTime";
+import getTime from '../../utils/getTime';
 
 // 搜索最顶端
 class Search extends Component {
@@ -33,13 +33,11 @@ class ReadItem extends Component {
 
     return (
       <div className="item">
-        <div className="title">
-          {item.get("title")}{" "}
-        </div>
+        <div className="title">{item.get('title')} </div>
         <div className="ctime">
-          {getTime(new Date(item.get("publishDate")).valueOf())}
+          {getTime(new Date(item.get('publishDate')).valueOf())}
         </div>
-        <div className="summary">{item.get("summary")}</div>
+        <div className="summary">{item.get('summary')}</div>
       </div>
     );
   }
@@ -61,7 +59,7 @@ class RecommendPage extends Component {
     return (
       <div className="recommend-page">
         <Search />
-        <OuterHeader title={"热门话题"} />
+        <OuterHeader title={'热门话题'} />
 
         <div className="read-list">
           {readHubList.map((item, index) => (

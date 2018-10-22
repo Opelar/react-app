@@ -1,10 +1,10 @@
-import React from "react";
-import classList from "../../utils/classList";
+import React from 'react';
+import classList from '../../utils/classList';
 
 const Toast = ({ show, iconClass, text }) => {
   return (
-    <div className={classList("toast-wrapper", { "my-hidden": !show })}>
-      {iconClass === "toast-loading" ? (
+    <div className={classList('toast-wrapper', { 'my-hidden': !show })}>
+      {iconClass === 'toast-loading' ? (
         <div className="my_loading">
           <div className="pswp__preloader__icn">
             <div className="pswp__preloader__cut">
@@ -14,7 +14,7 @@ const Toast = ({ show, iconClass, text }) => {
         </div>
       ) : (
         <div className="my-toast">
-          <i className={classList("my-toast-icon", iconClass)} />
+          <i className={classList('my-toast-icon', iconClass)} />
           <div className="my-toast-content">{text}</div>
         </div>
       )}

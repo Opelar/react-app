@@ -1,5 +1,5 @@
-import "../../style/videoGroup.css";
-import React, { Component } from "react";
+import '../../style/videoGroup.css';
+import React, { Component } from 'react';
 
 class VideoGroup extends Component {
   constructor(props) {
@@ -38,13 +38,13 @@ class VideoGroupItem extends Component {
         <div className="cover">
           <img
             className="video-cover"
-            src={data.get("videoCover")}
+            src={data.get('videoCover')}
             alt="cover"
           />
           <img className="play" src="/image/play.svg" alt="play" />
         </div>
-        <div className="video-title">{data.get("videoTitle")}</div>
-        <div className="video-desc">{data.get("videoDesc")}</div>
+        <div className="video-title">{data.get('videoTitle')}</div>
+        <div className="video-desc">{data.get('videoDesc')}</div>
       </div>
     );
   }

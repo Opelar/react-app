@@ -1,6 +1,6 @@
-import "../../style/imgGroup.css";
-import React, { Component } from "react";
-import NativeScroll from "../common/NativeScroller";
+import '../../style/imgGroup.css';
+import React, { Component } from 'react';
+import NativeScroll from '../common/NativeScroller';
 
 class ImgGroup extends Component {
   constructor(props) {
@@ -29,28 +29,24 @@ class ImgGroup extends Component {
   }
 
   onScroll = (direction, scrollTop) => {
-    if (direction === "down" && scrollTop <= this.isScrollHeight) {
+    if (direction === 'down' && scrollTop <= this.isScrollHeight) {
       this.setState({ isScroll: false });
     }
-  }
+  };
 
-  onTouchMove = (direction) => {
-    if (direction === "up") {
+  onTouchMove = direction => {
+    if (direction === 'up') {
       this.setState({ isScroll: true });
     }
-  }
+  };
 
   onScrollToBottom = () => {
-    console.log("到底了");
-  }
+    console.log('到底了');
+  };
 
   componentDidMount() {
     this.isScrollHeight = this.scrollAnchor.offsetTop;
     this.props.getImg();
-  }
-
-  componentDidUpdate(prevProps) {
-    // console.log(prevProps)
   }
 }
 
@@ -62,8 +58,8 @@ class ImgGroupItem extends Component {
     const data = this.props.data;
     return (
       <div className="img-group-item">
-        <img src={data.get("coverImg")} alt="img" />
-        <div className="num">{data.get("num")}</div>
+        <img src={data.get('coverImg')} alt="img" />
+        <div className="num">{data.get('num')}</div>
       </div>
     );
   }

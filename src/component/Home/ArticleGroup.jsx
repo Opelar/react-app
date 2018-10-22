@@ -1,8 +1,8 @@
-import "../../style/articleList.css";
-import React, { Component } from "react";
-import { Link } from "react-router";
-import { findDOMNode } from "react-dom";
-import NativeScroll from "../common/NativeScroller";
+import '../../style/articleList.css';
+import React, { Component } from 'react';
+import { Link } from 'react-router';
+import { findDOMNode } from 'react-dom';
+import NativeScroll from '../common/NativeScroller';
 
 let st = 0;
 
@@ -41,26 +41,26 @@ class ArticleGroup extends Component {
   onScroll = (direction, scrollTop) => {
     this.setState({ scrollTop: scrollTop });
     st = scrollTop;
-    if (direction === "down" && scrollTop <= this.isScrollHeight) {
+    if (direction === 'down' && scrollTop <= this.isScrollHeight) {
       this.setState({ isScroll: false });
     }
   };
 
   onTouchMove = direction => {
-    if (direction === "up") {
+    if (direction === 'up') {
       this.setState({ isScroll: true });
     }
   };
 
   onScrollToTop = () => {
-    console.log("refresh 刷新啊刷新啊。。。。。");
+    console.log('refresh 刷新啊刷新啊。。。。。');
   };
 
   onScrollToBottom = () => {
     let last = this.props.articleList.last();
     let lastId = 0;
     if (last) {
-      lastId = last.get("id");
+      lastId = last.get('id');
     }
     this.props.getArticle(lastId);
   };
@@ -71,7 +71,7 @@ class ArticleGroup extends Component {
       this.props.getArticle();
     }
 
-    let articleScrollTop = localStorage.getItem("articleScrollTop");
+    let articleScrollTop = localStorage.getItem('articleScrollTop');
 
     if (articleScrollTop === undefined) {
       articleScrollTop = 0;
@@ -88,7 +88,7 @@ class ArticleGroup extends Component {
   }
 
   componentWillUnmount() {
-    localStorage.setItem("articleScrollTop", st);
+    localStorage.setItem('articleScrollTop', st);
   }
 }
 
@@ -100,22 +100,22 @@ class ArticleItem extends Component {
   render() {
     const data = this.props.data;
     return (
-      <Link to={{ pathname: "/article", query: { id: data.get("id") } }}>
+      <Link to={{ pathname: '/article', query: { id: data.get('id') } }}>
         <div className="article-item">
           <div className="item-content">
             {/* <div className="top"> */}
-              {/* 来自： */}
-              {/* {data.get("tagName")} */}
+            {/* 来自： */}
+            {/* {data.get("tagName")} */}
             {/* </div> */}
 
             <div className="at-table">
               <div className="cell">
-                <h2 className="title">{data.get("title")}</h2>
-                <p className="desc">{data.get("desc")}</p>
+                <h2 className="title">{data.get('title')}</h2>
+                <p className="desc">{data.get('desc')}</p>
               </div>
-              {data.get("coverImg") ? (
+              {data.get('coverImg') ? (
                 <div className="cell">
-                  <img src={data.get("coverImg")} alt="封面图" />
+                  <img src={data.get('coverImg')} alt="封面图" />
                 </div>
               ) : null}
             </div>

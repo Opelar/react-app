@@ -1,9 +1,9 @@
-import { connect } from "react-redux";
-import { getReadHub } from "../action/readHubAction";
-import RecommendPage from "../component/Recommend/Recommend.jsx";
+import { connect } from 'react-redux';
+import { getReadHub } from '../action/readHubAction';
+import RecommendPage from '../component/Recommend/Recommend.jsx';
 
-const mapStateToProps = (state, ownProps) => {
-  return { readHubList: state.get("readHubList") };
+const mapStateToProps = state => {
+  return { readHubList: state.get('readHubList') };
 };
 
 const mapDispatchToProps = dispatch => ({
@@ -12,8 +12,9 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-const ReadHubContainer = connect(mapStateToProps, mapDispatchToProps)(
-  RecommendPage
-);
+const ReadHubContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(RecommendPage);
 
 export default ReadHubContainer;
