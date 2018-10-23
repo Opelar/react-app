@@ -1,8 +1,4 @@
-/**
- * Created by my on 2017-09-27.
- */
-
-import { is } from "immutable";
+import { is } from 'immutable';
 
 function shallowEqualImmutable(objA, objB) {
   if (objA === objB || is(objA, objB)) {
@@ -10,9 +6,9 @@ function shallowEqualImmutable(objA, objB) {
   }
 
   if (
-    typeof objA !== "object" ||
+    typeof objA !== 'object' ||
     objA === null ||
-    typeof objB !== "object" ||
+    typeof objB !== 'object' ||
     objB === null
   ) {
     return false;

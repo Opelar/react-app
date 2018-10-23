@@ -1,14 +1,13 @@
-import { Record, fromJS } from "immutable";
-import "whatwg-fetch";
-import { startInvoke, invokeOK, invokeError } from "../action/invokeActions";
-import makeQueryString from "./makeQueryString";
-//const serverURL = "http://60.205.95.207:8080/xx_api";
+import { Record, fromJS } from 'immutable';
+import { startInvoke, invokeOK, invokeError } from '../action/invokeActions';
+import makeQueryString from './makeQueryString';
+
 const serverURL =
-  "https://www.easy-mock.com/mock/59e6b7f00cfd446fbae844f0/www.webapp.com";
-const readHubURL = "https://api.readhub.me";
+  'https://www.easy-mock.com/mock/59e6b7f00cfd446fbae844f0/www.webapp.com';
+const readHubURL = 'https://api.readhub.me';
 
 export const RequestRecord = Record({
-  method: "GET",
+  method: 'GET',
   path: null,
   data: null // immutable
 });
@@ -24,12 +23,12 @@ export const ErrorInfoRecord = Record({
 });
 
 function sendRequestToServer(request) {
-  let method = request.get("method");
-  let path = request.get("path");
-  let data = request.get("data");
-  let url = "";
+  let method = request.get('method');
+  let path = request.get('path');
+  let data = request.get('data');
+  let url = '';
 
-  if (data.get("fromReadHub")) {
+  if (data.get('fromReadHub')) {
     url = `${readHubURL}${path}`;
   } else {
     url = `${serverURL}${path}`;
@@ -37,14 +36,14 @@ function sendRequestToServer(request) {
 
   let postData = null;
   let headers = {};
-  let userId = window._store.getState().getIn(["user", "id"]);
+  let userId = window._store.getState().getIn(['user', 'id']);
 
   if (userId != null) {
     headers.userId = userId;
   }
 
-  if (method === "GET") {
-    let qs = "";
+  if (method === 'GET') {
+    let qs = '';
     if (data != null) {
       qs = makeQueryString(data.toJS());
     }
@@ -52,9 +51,9 @@ function sendRequestToServer(request) {
       url = `${url}?${qs}`;
     }
   } else if (
-    request.get("method") === "POST" ||
-    request.get("method") === "PUT" ||
-    request.get("method") === "DELETE"
+    request.get('method') === 'POST' ||
+    request.get('method') === 'PUT' ||
+    request.get('method') === 'DELETE'
   ) {
     postData = data != null ? data.toJS() : null;
   }
@@ -81,7 +80,7 @@ function sendRequestToServer(request) {
     });
   }
 
-  console.log("invoke:", { path, postData });
+  console.log('invoke:', { path, postData });
   return invoke(method, url, postData);
 }
 

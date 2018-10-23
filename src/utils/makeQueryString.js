@@ -20,7 +20,7 @@ function makeQueryString(obj, opts) {
           let val = obj[key];
 
           if (val === undefined) {
-            return "";
+            return '';
           }
 
           if (val === null) {
@@ -38,20 +38,20 @@ function makeQueryString(obj, opts) {
               if (val2 === null) {
                 result.push(encode(key, opts));
               } else {
-                result.push(encode(key, opts) + "=" + encode(val2, opts));
+                result.push(encode(key, opts) + '=' + encode(val2, opts));
               }
             });
 
-            return result.join("&");
+            return result.join('&');
           }
 
-          return encode(key, opts) + "=" + encode(val, opts);
+          return encode(key, opts) + '=' + encode(val, opts);
         })
         .filter(function(x) {
           return x.length > 0;
         })
-        .join("&")
-    : "";
+        .join('&')
+    : '';
 }
 
 export default makeQueryString;

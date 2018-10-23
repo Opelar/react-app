@@ -1,6 +1,6 @@
-import { Route, IndexRoute } from "react-router";
-import setTitle from "./setTitle";
-import React from "react";
+import { Route, IndexRoute } from 'react-router';
+import setTitle from './setTitle';
+import React from 'react';
 
 export default function createRoute(props, isIndex = false) {
   let onEnter = props.onEnter;

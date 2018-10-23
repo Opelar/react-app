@@ -1,4 +1,4 @@
-import { fromJS } from "immutable";
+import { fromJS } from 'immutable';
 
 export default function action(type, payload) {
   let error = payload instanceof Error;
