@@ -16,7 +16,7 @@ function makeQueryString(obj, opts) {
   return obj
     ? Object.keys(obj)
         .sort()
-        .map(function(key) {
+        .map(key => {
           let val = obj[key];
 
           if (val === undefined) {
@@ -30,7 +30,7 @@ function makeQueryString(obj, opts) {
           if (Array.isArray(val)) {
             let result = [];
 
-            val.slice().forEach(function(val2) {
+            val.slice().forEach(val2 => {
               if (val2 === undefined) {
                 return;
               }
@@ -47,9 +47,7 @@ function makeQueryString(obj, opts) {
 
           return encode(key, opts) + '=' + encode(val, opts);
         })
-        .filter(function(x) {
-          return x.length > 0;
-        })
+        .filter(x => x.length > 0)
         .join('&')
     : '';
 }
