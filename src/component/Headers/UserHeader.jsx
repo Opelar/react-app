@@ -1,20 +1,9 @@
 import '../../style/headers.css';
-import React, { Component } from 'react';
+import React from 'react';
 
-class UserHeader extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-  render() {
-    let title = this.props.title;
-    return (
-      <div className="user-header">
-        <div className="back" onClick={() => this.props.router.goBack()} />
-        <span>{title}</span>
-      </div>
-    );
-  }
-}
-
-export default UserHeader;
+export default ({ title, router }) => (
+  <div className="user-header">
+    <div className="back" onClick={() => router.goBack()} />
+    <span>{title}</span>
+  </div>
+);

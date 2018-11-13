@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Navbars from '../Navbars/Navbars.jsx';
 import classList from '../../utils/classList';
 import ImgGroup from './ImgGroup';
@@ -15,8 +15,9 @@ const TabContent = ({
   imgList,
   videoList
 }) => {
-  const idx = parseFloat(tabIdx);
+  const idx = parseInt(tabIdx);
   let tabItemComp = null;
+  console.log(tabIdx);
 
   if (idx === 0) {
     tabItemComp = (
@@ -39,81 +40,61 @@ const TabContent = ({
   );
 };
 
-class HomePage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      tabIdx: null
-    };
-  }
+export default props => {
+  const [tabIdx, setTabIdx] = useState(null);
 
-  componentWillMount() {
-    let homeIndex = localStorage.getItem('homeIndex');
+  const {
+    getArticle,
+    getImg,
+    getVideo,
+    articleList,
+    imgList,
+    videoList
+  } = props;
 
-    if (homeIndex == null) {
-      this.setState({ tabIdx: 0 });
-    } else {
-      this.setState({ tabIdx: homeIndex });
-    }
-  }
-
-  render() {
-    const tabIdx = parseFloat(this.state.tabIdx);
-    const {
-      getArticle,
-      getImg,
-      getVideo,
-      articleList,
-      imgList,
-      videoList
-    } = this.props;
-
-    return (
-      <div className="home-page">
-        <div className="home-tabs">
-          <div
-            className={classList('tab-item', { active: tabIdx === 0 })}
-            onClick={e => {
-              this.setState({ tabIdx: 0 });
-              localStorage.setItem('homeIndex', 0);
-            }}
-          >
-            文章
-          </div>
-          <div
-            className={classList('tab-item', { active: tabIdx === 1 })}
-            onClick={e => {
-              this.setState({ tabIdx: 1 });
-              localStorage.setItem('homeIndex', 1);
-            }}
-          >
-            图集
-          </div>
-          <div
-            className={classList('tab-item', { active: tabIdx === 2 })}
-            onClick={e => {
-              this.setState({ tabIdx: 2 });
-              localStorage.setItem('homeIndex', 2);
-            }}
-          >
-            视频
-          </div>
+  return (
+    <div className="home-page">
+      <div className="home-tabs">
+        <div
+          className={classList('tab-item', { active: tabIdx === 0 })}
+          onClick={() => {
+            setTabIdx(0);
+            localStorage.setItem('homeIndex', 0);
+          }}
+        >
+          文章
         </div>
-
-        <TabContent
-          tabIdx={tabIdx}
-          getArticle={getArticle}
-          getImg={getImg}
-          getVideo={getVideo}
-          articleList={articleList}
-          imgList={imgList}
-          videoList={videoList}
-        />
-
-        <Navbars tabIndex={0} />
+        <div
+          className={classList('tab-item', { active: tabIdx === 1 })}
+          onClick={() => {
+            setTabIdx(1);
+            localStorage.setItem('homeIndex', 1);
+          }}
+        >
+          图集
+        </div>
+        <div
+          className={classList('tab-item', { active: tabIdx === 2 })}
+          onClick={() => {
+            setTabIdx(2);
+            localStorage.setItem('homeIndex', 2);
+          }}
+        >
+          视频
+        </div>
       </div>
-    );
-  }
-}
 
-export default HomePage;
+      <TabContent
+        tabIdx={tabIdx}
+        getArticle={getArticle}
+        getImg={getImg}
+        getVideo={getVideo}
+        articleList={articleList}
+        imgList={imgList}
+        videoList={videoList}
+      />
+
+      <Navbars tabIndex={0} />
+    </div>
+  );
+};
