@@ -14,9 +14,7 @@ const mapDispatchToProps = dispath => ({
   }
 });
 
-const ArticleDetailsContainer = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(ArticleDetails);
-
-export default ArticleDetailsContainer;

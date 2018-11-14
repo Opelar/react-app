@@ -12,9 +12,7 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-const ReadHubContainer = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(RecommendPage);
-
-export default ReadHubContainer;

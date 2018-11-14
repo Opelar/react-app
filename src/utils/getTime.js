@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 
-function getTime(time) {
+export default function getTime(time) {
   let t = time * 1;
   let DValue = new Date() - t;
   if (DValue >= 86400000) {
@@ -22,5 +22,3 @@ function getTime(time) {
     return '刚刚';
   }
 }
-
-export default getTime;

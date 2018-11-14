@@ -26,9 +26,8 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-const HomePageContainer = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(HomePage);
 
-export default HomePageContainer;

@@ -5,7 +5,7 @@ function encode(value, opts) {
   return value;
 }
 
-function makeQueryString(obj, opts) {
+export default function makeQueryString(obj, opts) {
   let defaults = {
     encode: true,
     strict: true
@@ -51,5 +51,3 @@ function makeQueryString(obj, opts) {
         .join('&')
     : '';
 }
-
-export default makeQueryString;

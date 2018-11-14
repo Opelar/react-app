@@ -58,12 +58,6 @@ function sendRequestToServer(request) {
     postData = data != null ? data.toJS() : null;
   }
 
-  /**
-   * invoke serverce
-   * @param method
-   * @param url
-   * @param data
-   */
   function invoke(method, url, data) {
     return new Promise((resolve, reject) => {
       fetch(url, {
@@ -86,7 +80,6 @@ function sendRequestToServer(request) {
 
 function makeRequest(method, path, requestData) {
   let data = fromJS(requestData);
-  // console.log(requestData)
   return RequestRecord({ method, path, data });
 }
 

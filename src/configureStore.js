@@ -1,10 +1,9 @@
-import { createStore, applyMiddleware } from "redux";
-import thunkMiddleware from "redux-thunk";
-import rootReducer from "./reducer/rootReducer";
-import { composeWithDevTools } from "redux-devtools-extension";
-// import { fromJS, is } from "immutable";
+import { createStore, applyMiddleware } from 'redux';
+import thunkMiddleware from 'redux-thunk';
+import rootReducer from './reducer/rootReducer';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-function configureStore() {
+export default () => {
   let store = createStore(
     rootReducer,
     composeWithDevTools(applyMiddleware(thunkMiddleware))
@@ -19,6 +18,4 @@ function configureStore() {
   });
 
   return store;
-}
-
-export default configureStore;
+};

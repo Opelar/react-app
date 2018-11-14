@@ -3,7 +3,7 @@
 
 var hasOwn = {}.hasOwnProperty;
 
-function classNames() {
+export default function classNames() {
   var classes = [];
 
   for (var i = 0; i < arguments.length; i++) {
@@ -27,5 +27,3 @@ function classNames() {
 
   return classes.join(' ');
 }
-
-export default classNames;

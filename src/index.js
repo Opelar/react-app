@@ -1,32 +1,32 @@
 // style
-import "./style/reset.css";
-import "./style/common.css";
-import "./style/animate.css";
-import "./style/index.css";
-import "./style/toast.css";
+import './style/reset.css';
+import './style/common.css';
+import './style/animate.css';
+import './style/index.css';
+import './style/toast.css';
 // base
-import registerServiceWorker from "./registerServiceWorker";
-import React from "react";
-import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import { Router, Route, IndexRoute, browserHistory } from "react-router";
-import configureStore from "./configureStore";
-import initReactFastclick from "react-fastclick";
+import registerServiceWorker from './registerServiceWorker';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import configureStore from './configureStore';
+import initReactFastclick from 'react-fastclick';
 // component || container
-import App from "./component/App";
-import HomePageContainer from "./container/HomePageContainer";
-import PersonalPage from "./component/Personal/PersonalPage.jsx";
+import App from './component/App';
+import HomePageContainer from './container/HomePageContainer';
+import PersonalPage from './component/Personal/PersonalPage.jsx';
 // import Recommend from "./component/Recommend/Recommend.jsx";
-import CirclePage from "./component/Circle/CirclePage.jsx";
-import ArticleDetailsContainer from "./container/ArticleDetailsContainer";
+import CirclePage from './component/Circle/CirclePage.jsx';
+import ArticleDetailsContainer from './container/ArticleDetailsContainer';
 // import MyEditor from "./component/Editor/MyEditor.jsx";
 // User
-import LoginContainer from "./container/LoginContainer";
-import RegisterPage from "./component/User/RegisterPage";
-import ForgetPassword from "./component/User/ForgetPassword";
-import ReadHubContainer from "./container/ReadHubContainer";
+import LoginContainer from './container/LoginContainer';
+import RegisterPage from './component/User/RegisterPage';
+import ForgetPassword from './component/User/ForgetPassword';
+import ReadHubContainer from './container/ReadHubContainer';
 // search
-import SearchPage from "./component/Home/SearchPage";
+import SearchPage from './component/Home/SearchPage';
 
 const store = configureStore();
 initReactFastclick();
@@ -48,7 +48,7 @@ ReactDOM.render(
       </Route>
     </Router>
   </Provider>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 
 registerServiceWorker();
