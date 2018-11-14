@@ -21,7 +21,7 @@ const CommentItem = ({ data }) => {
 
 export default ({ articleId }) => {
   useEffect(() => {
-    console.log(articleId);
+    console.log('articleId===', articleId);
   }, []);
 
   return (

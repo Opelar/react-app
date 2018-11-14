@@ -64,7 +64,6 @@ class ArticleGroup extends Component {
           {articleList.map((item, index) => (
             <ArticleItem key={index} data={item} />
           ))}
-          {/* {this.state.toBottom ? <PullLoading /> : null} */}
         </div>
       </NativeScroll>
     );
@@ -98,7 +97,6 @@ class ArticleGroup extends Component {
   };
 
   componentDidMount() {
-    // 是否请求文章列表的数据
     if (this.props.articleList.size === 0) {
       this.props.getArticle();
     }
@@ -110,7 +108,6 @@ class ArticleGroup extends Component {
     }
 
     findDOMNode(this.scroller).scrollTop = articleScrollTop;
-    // console.log(findDOMNode(this.scroller).scrollTop);
   }
 
   componentDidUpdate(prevProps) {
@@ -122,10 +119,6 @@ class ArticleGroup extends Component {
   componentWillUnmount() {
     localStorage.setItem('articleScrollTop', st);
   }
-
-  // shouldComponentUpdate() {
-  //   return false;
-  // }
 }
 
 export default ArticleGroup;

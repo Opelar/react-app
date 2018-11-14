@@ -19,13 +19,13 @@ let rootReducer = combineReducers({
   readHubList: readHubReducer
 });
 
-function toJS(x) {
-  if (x != null) {
-    return x.toJS ? x.toJS() : x;
-  } else {
-    return x;
-  }
-}
+// function toJS(x) {
+//   if (x != null) {
+//     return x.toJS ? x.toJS() : x;
+//   } else {
+//     return x;
+//   }
+// }
 
 export default (state, action) => {
   // console.log("reduce, action: ", {

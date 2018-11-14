@@ -15,19 +15,18 @@ const TabContent = ({
   imgList,
   videoList
 }) => {
-  const idx = parseInt(tabIdx);
   let tabItemComp = null;
 
-  if (idx === 0) {
+  if (tabIdx === 0) {
     tabItemComp = (
       <ArticleGroup getArticle={getArticle} articleList={articleList} />
     );
-  } else if (idx === 1) {
+  } else if (tabIdx === 1) {
     tabItemComp = <ImgGroup getImg={getImg} imgList={imgList} />;
-  } else if (idx === 2) {
+  } else if (tabIdx === 2) {
     tabItemComp = <VideoGroup getVideo={getVideo} videoList={videoList} />;
   } else {
-    return idx;
+    return tabIdx;
   }
 
   return (
@@ -40,7 +39,9 @@ const TabContent = ({
 };
 
 export default props => {
-  const [tabIdx, setTabIdx] = useState(null);
+  let hIndex = localStorage.getItem('homeIndex');
+  hIndex = hIndex ? hIndex - 0 : 0;
+  const [tabIdx, setTabIdx] = useState(hIndex);
 
   const {
     getArticle,
@@ -93,13 +94,7 @@ export default props => {
         videoList={videoList}
       />
 
-      <Navbars
-        tabIndex={
-          localStorage.getItem('homeIndex')
-            ? localStorage.getItem('homeIndex') - 0
-            : 0
-        }
-      />
+      <Navbars tabIndex={0} />
     </div>
   );
 };
