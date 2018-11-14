@@ -2,7 +2,7 @@ import '../../style/cmtList.css';
 import React, { useEffect } from 'react';
 import cmtList from './cmtList';
 
-function CommentItem({ data }) {
+const CommentItem = ({ data }) => {
   const { avatar, userName, cmtTxt, ctime } = data;
 
   return (
@@ -17,12 +17,12 @@ function CommentItem({ data }) {
       </div>
     </div>
   );
-}
+};
 
-export default function CommentList({ articleId }) {
+export default ({ articleId }) => {
   useEffect(() => {
     console.log(articleId);
-  });
+  }, []);
 
   return (
     <section className="comment">
@@ -42,4 +42,4 @@ export default function CommentList({ articleId }) {
       </div>
     </section>
   );
-}
+};

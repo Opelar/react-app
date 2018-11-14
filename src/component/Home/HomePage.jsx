@@ -17,7 +17,6 @@ const TabContent = ({
 }) => {
   const idx = parseInt(tabIdx);
   let tabItemComp = null;
-  console.log(tabIdx);
 
   if (idx === 0) {
     tabItemComp = (
@@ -94,7 +93,13 @@ export default props => {
         videoList={videoList}
       />
 
-      <Navbars tabIndex={0} />
+      <Navbars
+        tabIndex={
+          localStorage.getItem('homeIndex')
+            ? localStorage.getItem('homeIndex') - 0
+            : 0
+        }
+      />
     </div>
   );
 };

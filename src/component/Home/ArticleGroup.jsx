@@ -6,6 +6,38 @@ import NativeScroll from '../common/NativeScroller';
 
 let st = 0;
 
+const ArticleItem = ({ data }) => (
+  <Link to={{ pathname: '/article', query: { id: data.get('id') } }}>
+    <div className="article-item">
+      <div className="item-content">
+        <div className="top">
+          来自：
+          {data.get('tagName')}
+        </div>
+
+        <div className="at-table">
+          <div className="cell">
+            <h2 className="title">{data.get('title')}</h2>
+            <p className="desc">{data.get('desc')}</p>
+          </div>
+          {data.get('coverImg') ? (
+            <div className="cell">
+              <img src={data.get('coverImg')} alt="封面图" />
+            </div>
+          ) : null}
+        </div>
+
+        <div className="bottom">
+          <div className="author-avatar">
+            <img src={data.get('authorAvatar')} alt="avatar" />
+          </div>
+          <div className="author-name">{data.get('author')}</div>
+        </div>
+      </div>
+    </div>
+  </Link>
+);
+
 class ArticleGroup extends Component {
   constructor(props) {
     super(props);
@@ -90,51 +122,10 @@ class ArticleGroup extends Component {
   componentWillUnmount() {
     localStorage.setItem('articleScrollTop', st);
   }
-}
 
-class ArticleItem extends Component {
-  constructor(props) {
-    super();
-  }
-
-  render() {
-    const data = this.props.data;
-    return (
-      <Link to={{ pathname: '/article', query: { id: data.get('id') } }}>
-        <div className="article-item">
-          <div className="item-content">
-            {/* <div className="top"> */}
-            {/* 来自： */}
-            {/* {data.get("tagName")} */}
-            {/* </div> */}
-
-            <div className="at-table">
-              <div className="cell">
-                <h2 className="title">{data.get('title')}</h2>
-                <p className="desc">{data.get('desc')}</p>
-              </div>
-              {data.get('coverImg') ? (
-                <div className="cell">
-                  <img src={data.get('coverImg')} alt="封面图" />
-                </div>
-              ) : null}
-            </div>
-
-            {/* <div className="bottom">
-              <div className="author-avatar">
-                <img src={data.get("authorAvatar")} alt="avatar" />
-              </div>
-              <div className="author-name">{data.get("author")}</div>
-            </div> */}
-          </div>
-        </div>
-      </Link>
-    );
-  }
-
-  shouldComponentUpdate() {
-    return false;
-  }
+  // shouldComponentUpdate() {
+  //   return false;
+  // }
 }
 
 export default ArticleGroup;

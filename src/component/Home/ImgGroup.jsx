@@ -10,9 +10,7 @@ const ImgGroupItem = ({ data }) => (
 );
 
 export default ({ imgList, getImg }) => {
-  useEffect(() => {
-    getImg();// 两次？
-  });
+  useEffect(() => getImg(), []);
 
   return (
     <NativeScroll className="swiper-slide animated fadeIn">

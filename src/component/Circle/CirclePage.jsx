@@ -55,7 +55,7 @@ const CircleList = ({ circleList }) => (
   </div>
 );
 
-export default function CirclePage() {
+export default () => {
   const { userName, cover, userAvatar, circleList } = myCircle;
 
   useEffect(() => {
@@ -80,7 +80,7 @@ export default function CirclePage() {
         imgBox[1].style.float = 'left';
       }
     }
-  });
+  }, []);
 
   return (
     <div className="circle-page">
@@ -90,4 +90,4 @@ export default function CirclePage() {
       <Navbars tabIndex={2} />
     </div>
   );
-}
+};

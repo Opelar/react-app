@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PullLoading = ({ isFetching, loaded }) => {
+export default ({ isFetching, loaded }) => {
   return (
     <div className="my-pull-loading">
       <div className="loading">
@@ -10,5 +10,3 @@ const PullLoading = ({ isFetching, loaded }) => {
     </div>
   );
 };
-
-export default PullLoading;
