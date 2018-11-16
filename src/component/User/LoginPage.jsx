@@ -1,12 +1,13 @@
 import '../../style/login.css';
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router';
 import { showError } from '../../utils/toast';
+import { useFormInput } from '../../utils/useHooks';
 import UserHeader from '../Headers/UserHeader.jsx';
 
 export default props => {
-  const [tel, setTel] = useState('');
-  const [password, setPassword] = useState('');
+  const tel = useFormInput('');
+  const password = useFormInput('');
 
   function onOK() {
     let next = props.params.next;
@@ -18,17 +19,19 @@ export default props => {
 
   function handleSubmit() {
     const reg = /^1[34578]\d{9}$/;
+    const telVal = tel.value;
+    const pwdVal = password.value;
 
-    if (!reg.test(tel)) {
+    if (!reg.test(telVal)) {
       showError('手机号格式不正确');
       return false;
     }
-    if (!password || password.length > 12 || password.length < 6) {
+    if (!pwdVal || pwdVal.length > 12 || pwdVal.length < 6) {
       showError('密码为6~12位');
       return false;
     }
 
-    props.userLogin(tel, password, onOK);
+    props.userLogin(telVal, pwdVal, onOK);
   }
 
   return (
@@ -42,19 +45,11 @@ export default props => {
         <p className="page-title">欢迎使用</p>
         <form className="login-form" action="">
           <div className="form-group">
-            <input
-              type="text"
-              placeholder="手机号"
-              onChange={e => setTel(e.target.value)}
-            />
+            <input type="text" placeholder="手机号" {...tel} />
           </div>
 
           <div className="form-group">
-            <input
-              type="password"
-              placeholder="密码"
-              onChange={e => setPassword(e.target.value)}
-            />
+            <input type="password" placeholder="密码" {...password} />
           </div>
         </form>
 

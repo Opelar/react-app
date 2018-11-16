@@ -2,26 +2,30 @@ import '../../style/login.css';
 import React, { useState } from 'react';
 import classList from '../../utils/classList';
 import { showError } from '../../utils/toast';
+import { useFormInput } from '../../utils/useHooks';
 import UserHeader from '../Headers/UserHeader.jsx';
 
 export default props => {
-  const [tel, setTel] = useState('');
-  const [nickName, setNickName] = useState('');
-  const [password, setPassword] = useState('');
   const [pwdStatus, setPwdStatus] = useState('');
+  const tel = useFormInput('');
+  const nickName = useFormInput('');
+  const password = useFormInput('');
 
   function handleSubmit() {
     const reg = /^1[34578]\d{9}$/;
+    const telVal = tel.value;
+    const nameVal = nickName.value;
+    const pwdVal = password.value;
 
-    if (!reg.test(tel)) {
+    if (!reg.test(telVal)) {
       showError('手机号格式不正确');
       return false;
     }
-    if (nickName.length < 2 || nickName.length > 8) {
+    if (nameVal.length < 2 || nameVal.length > 8) {
       showError('昵称为2~8位');
       return false;
     }
-    if (!password || password.length > 12 || password.length < 6) {
+    if (!pwdVal || pwdVal.length > 12 || pwdVal.length < 6) {
       showError('密码为6~12位');
       return false;
     }
@@ -38,24 +42,16 @@ export default props => {
         <p className="page-title">注册新用户</p>
         <form className="login-form register-from">
           <div className="form-group">
-            <input
-              type="tel"
-              placeholder="手机号"
-              onChange={e => setTel(e.target.value)}
-            />
+            <input type="tel" placeholder="手机号" {...tel} />
           </div>
           <div className="form-group">
-            <input
-              type="text"
-              placeholder="用户名"
-              onChange={e => setNickName(e.target.value)}
-            />
+            <input type="text" placeholder="用户名" {...nickName} />
           </div>
           <div className="form-group">
             <input
               type={!pwdStatus ? 'password' : 'text'}
               placeholder="密码"
-              onChange={e => setPassword(e.target.value)}
+              {...password}
             />
             <div
               className={classList('seepwd', {

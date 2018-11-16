@@ -1,31 +1,31 @@
 import '../../style/login.css';
 import React, { useState } from 'react';
+import { showError } from '../../utils/toast';
+import { useFormInput } from '../../utils/useHooks';
 import classList from '../../utils/classList';
 import UserHeader from '../Headers/UserHeader.jsx';
-import { showError } from '../../utils/toast';
 
 export default props => {
   const [pwdStatus, setPwdStatus] = useState(false);
   const [codeStatus, setCodeStatus] = useState(true);
   const [btnTxt, setBtnTxt] = useState('发送验证码');
-  const [tel, setTel] = useState('');
-  const [authcode, setAuthcode] = useState('');
-  const [password, setPassword] = useState('');
+  const tel = useFormInput('');
+  const authcode = useFormInput('');
+  const password = useFormInput('');
 
-  function handleGetAuthCode(e) {
+  function handleGetAuthCode() {
     let second = 60;
     const reg = /^1[34578]\d{9}$/;
     let txt = '秒后重发';
 
-    if (!reg.test(tel)) {
+    if (!reg.test(tel.value)) {
       showError('手机号格式不正确');
       return false;
     }
 
     setCodeStatus(false);
     let t = setInterval(() => {
-      --second;
-      console.log(second);
+      second -= 1;
 
       setBtnTxt(second.toString() + txt);
 
@@ -39,16 +39,19 @@ export default props => {
 
   function handleSubmit() {
     const reg = /^1[34578]\d{9}$/;
+    const telVal = tel.value;
+    const authcodeVal = authcode.value;
+    const pwdVal = password.value;
 
-    if (!reg.test(tel)) {
+    if (!reg.test(telVal)) {
       showError('手机号格式不正确');
       return false;
     }
-    if (!authcode || authcode.length > 6) {
+    if (!authcodeVal || authcodeVal.length > 6) {
       showError('验证码不能为空且在六位以内');
       return false;
     }
-    if (!password || password.length > 12 || password.length < 6) {
+    if (!pwdVal || pwdVal.length > 12 || pwdVal.length < 6) {
       showError('密码为6-12位');
       return false;
     }
@@ -67,18 +70,10 @@ export default props => {
         <p className="page-title">找回密码</p>
         <form className="login-form register-from" action="">
           <div className="form-group">
-            <input
-              type="tel"
-              placeholder="手机号"
-              onChange={e => setTel(e.target.value)}
-            />
+            <input type="tel" placeholder="手机号" {...tel} />
           </div>
           <div className="form-group">
-            <input
-              type="number"
-              placeholder="验证码"
-              onChange={e => setAuthcode(e.target.value)}
-            />
+            <input type="number" placeholder="验证码" {...authcode} />
             <button
               type="button"
               className={classList('authcode', { disabled: !codeStatus })}
@@ -92,7 +87,7 @@ export default props => {
             <input
               type={!pwdStatus ? 'password' : 'text'}
               placeholder="新密码"
-              onChange={e => setPassword(e.target.value)}
+              {...password}
             />
             <div
               className={classList('seepwd', {
