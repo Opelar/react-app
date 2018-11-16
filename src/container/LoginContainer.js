@@ -5,9 +5,7 @@ import { login } from '../action/userAction';
 const mapStateToProps = (state, ownProps) => ({});
 
 const mapDispatchToProps = dispath => ({
-  userLogin(tel, password, onOK) {
-    dispath(login(tel, password, onOK));
-  }
+  userLogin: (tel, password, onOK) => dispath(login(tel, password, onOK))
 });
 
 export default connect(

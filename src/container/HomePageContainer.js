@@ -15,19 +15,12 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  getArticle() {
-    dispatch(getArticleGroup());
-  },
-  getImg() {
-    dispatch(getImgGroup());
-  },
-  getVideo() {
-    dispatch(getVideoGroup());
-  }
+  getArticle: () => dispatch(getArticleGroup()),
+  getImg: () => dispatch(getImgGroup()),
+  getVideo: () => dispatch(getVideoGroup())
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(HomePage);
-

@@ -9,9 +9,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispath => ({
-  getArticleContent(id) {
-    dispath(getArticleDetails(id));
-  }
+  getArticleContent: (id) => dispath(getArticleDetails(id))
 });
 
 export default connect(

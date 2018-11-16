@@ -7,9 +7,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  getReadHubHot({ fromReadHub, pageSize }) {
-    dispatch(getReadHub({ fromReadHub, pageSize }));
-  }
+  getReadHubHot: ({ fromReadHub, pageSize }) =>
+    dispatch(getReadHub({ fromReadHub, pageSize }))
 });
 
 export default connect(

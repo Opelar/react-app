@@ -6,19 +6,17 @@ import OuterHeader from '../Headers/OuterHeader.jsx';
 import getTime from '../../utils/getTime';
 
 // 搜索最顶端
-const Search = () => {
-  return (
-    <div className="home-search">
-      <Link to="search">
-        <div className="search">
-          <div className="icon" />
-          <div className="txt">搜索</div>
-        </div>
-      </Link>
-      <div className="fenlei">{/* 分类 */}</div>
-    </div>
-  );
-};
+const Search = () => (
+  <div className="home-search">
+    <Link to="search">
+      <div className="search">
+        <div className="icon" />
+        <div className="txt">搜索</div>
+      </div>
+    </Link>
+    <div className="fenlei">{/* 分类 */}</div>
+  </div>
+);
 
 const ReadItem = ({ item }) => (
   <div className="item">
