@@ -29,7 +29,9 @@ const ReadItem = ({ item }) => (
 );
 
 export default ({ readHubList, getReadHubHot }) => {
-  useEffect(() => getReadHubHot({ fromReadHub: true, pageSize: 20 }), []);
+  useEffect(() => {
+    getReadHubHot({ fromReadHub: true, pageSize: 20 });
+  }, [getReadHubHot]);
 
   return (
     <div className="recommend-page">

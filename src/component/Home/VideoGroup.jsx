@@ -13,7 +13,10 @@ const VideoGroupItem = ({ data }) => (
 );
 
 export default ({ videoList, getVideo }) => {
-  useEffect(() => getVideo(), []);
+  useEffect(() => {
+    getVideo();
+  }, [getVideo]);
+  
   return (
     <div className="swiper-slide animated fadeIn">
       <div className="video-group-list">

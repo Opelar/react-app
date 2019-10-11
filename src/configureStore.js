@@ -3,10 +3,14 @@ import thunkMiddleware from 'redux-thunk';
 import rootReducer from './reducer/rootReducer';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
+const isDev = process.env.NODE_ENV === 'development'
+
 export default () => {
-  let store = createStore(
+  const store = createStore(
     rootReducer,
-    composeWithDevTools(applyMiddleware(thunkMiddleware))
+    isDev 
+      ? composeWithDevTools(applyMiddleware(thunkMiddleware))
+      : applyMiddleware(thunkMiddleware)
   );
 
   if (window) {
